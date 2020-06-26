@@ -1,0 +1,217 @@
+.container_cake {
+    padding: 20px;
+    background:white;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cake_items {
+    margin: 15px;
+}
+
+.title {
+    background:#FFFACD;
+    font-size: 25px;
+}
+
+.price {
+    background:#FFFACD;
+}
+
+.body {
+    background:#FFFFE0;
+    max-width: 200px;
+}
+
+
+.cake_items img{
+    width: 165px;
+    height: 175px;
+}
+
+header{
+  height:80px;
+  background:pink;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  width:150px;
+  height:80px;
+  background: #FAFAD2;
+}
+
+.header-menu{
+    background:pink;
+    display: flex;
+    align-items: stretch;
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header-menu li{
+    cursor: pointer;
+    border-left: 2px solid #fff;
+    margin: 0;
+}
+
+.header-menu a{
+	text-decoration: none;
+	padding: 0 50px;
+	color: black;
+    line-height:80px;
+    font-size: 19px;
+}
+
+.header-menu li:hover{
+    background: #FA8072;
+}
+
+.catalog{
+    background-image: url(images/cat.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px;
+}
+.catalog a{
+    text-decoration: none;
+    color: black;
+    font-style: oblique;
+    font-size: 17px;
+    margin: 7px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-child {
+    z-index: 1000;
+    position: absolute;
+    display: none;
+    background-color: pink;
+    width: 150px;
+}
+.dropdown-child a {
+    margin: 4px;
+    color: black;
+    padding: 1px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
+}
+
+/*
+essential styles:
+these make the slideshow work
+*/
+#slides{
+    position: relative;
+    height: 300px;
+    padding: 0px;
+    margin: 60px;
+    list-style-type: none;
+}
+
+.slide{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing{
+    opacity: 1;
+    z-index: 2;
+}
+
+
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+.slide{
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #333;
+    color: #fff;
+}
+
+.slide:nth-of-type(1){
+    background: red;
+}
+.slide:nth-of-type(2){
+    background: orange;
+}
+.slide:nth-of-type(3){
+    background: green;
+}
+.slide:nth-of-type(4){
+    background: blue;
+}
+.slide:nth-of-type(5){
+    background: purple;
+}
+
+
+#wrap_form{
+    display: flex;
+    justify-content: center;
+
+}
+
+.form_wrap{
+    background:#FA8072;
+    display: flex;
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+}
+
+.forma{
+    background: #FFB6C1;
+    margin: 5px;
+}
+
+#foot{
+    margin-top: 150px;
+    height:130px;
+    background:#FF7F50;
+    display: flex;
+    justify-content: center;
+}
+
+.foot-menu{
+    background:#FF7F50;
+    display: flex;
+    align-items: stretch;
+	list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.foot-menu li{
+    margin:20px;
+}

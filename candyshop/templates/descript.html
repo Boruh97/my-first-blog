@@ -1,0 +1,18 @@
+
+    <div class="cake_items">
+        {% if info.image %}
+        <div class="items_images">
+    <img src="{{ info.image.url }}">
+        </div>
+
+        {% endif %}
+        <div class="title">
+            {{ info.title }}
+        </div>
+        <div class="price">
+            {{ info.price }}
+        </div>
+        <div class="body">
+            {{ info.body }}
+            {{ info.drop_body }}
+        </div>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="static/style.css">
+  <title>candy_doll</title>
+ </head>
+ <body>
+     <header>
+      <div class="logo"> логотип </div>
+      <ul class="header-menu">
+            <li>
+                <a href="#">Каталог</a>
+            </li>
+          <li>
+                <a href="">Оплата</a>
+            </li>
+
+          <li>
+                <a href="">Контакты</a>
+            </li>
+          <li>
+                <a href="">Корзина</a>
+              <img src="static/images/art.png" width="30px" >
+
+            </li>
+      </ul>
+    </header>
+
+         <div class="catalog">
+        <div class="dropdown">
+        <h1><a href="#">Упаковка</a></h1>
+                      <div class="dropdown-child">
+    <a href="cake/">Торты</a>
+    <a href="#">Капкейки</a>
+    <a href="#">Конфеты и шоколад</a>
+    <a href="#">Печенье, пряники </a>
+    <a href="#">Зефир и Macarons</a>
+    <a href="#">Креманки для трайфлов</a>
+    <a href="#">Пакетики для сладостей</a>
+    <a href="#">Ленты, бумажные наполнители</a>
+    <a href="#">Подложки</a>
+
+  </div>
+        </div>
+
+                <div class="dropdown">
+        <h1><a href="#">Пищевые красители</a></h1>
+                      <div class="dropdown-child">
+    <a href="#">Красители<br>Гелевые</a>
+    <a href="#">Водорастворимые</a>
+    <a href="#">Жирорастворимые</a>
+    <a href="#">Цветочная пыльца</a>
+    <a href="#">Кандурин</a>
+    <a href="#">Фломастеры<br>для рисования</a>
+
+  </div>
+        </div>
+
+        <div class="dropdown">
+        <h1><a href="#">Инструменты и формы</a></h1>
+                      <div class="dropdown-child">
+    <a href="#">Красители<br>Гелевые</a>
+    <a href="#">Водорастворимые</a>
+    <a href="#">Жирорастворимые</a>
+    <a href="#">Цветочная пыльца</a>
+    <a href="#">Кандурин</a>
+    <a href="#">Фломастеры<br>для рисования</a>
+
+  </div>
+        </div>
+
+        <div class="dropdown">
+        <h1><a href="#">Бумажные формы и капсулы</a></h1>
+                      <div class="dropdown-child">
+    <a href="#">Красители<br>Гелевые</a>
+    <a href="#">Водорастворимые</a>
+    <a href="#">Жирорастворимые</a>
+    <a href="#">Цветочная пыльца</a>
+    <a href="#">Кандурин</a>
+    <a href="#">Фломастеры<br>для рисования</a>
+
+  </div>
+        </div>
+
+        <div class="dropdown">
+        <h1><a href="#">Пищевые ингредиенты</a></h1>
+                      <div class="dropdown-child">
+    <a href="#">Красители<br>Гелевые</a>
+    <a href="#">Водорастворимые</a>
+    <a href="#">Жирорастворимые</a>
+    <a href="#">Цветочная пыльца</a>
+    <a href="#">Кандурин</a>
+    <a href="#">Фломастеры<br>для рисования</a>
+
+  </div>
+        </div>
+
+        <div class="dropdown">
+        <h1><a href="#">Посыпки и украшения</a></h1>
+                      <div class="dropdown-child">
+    <a href="#">Красители<br>Гелевые</a>
+    <a href="#">Водорастворимые</a>
+    <a href="#">Жирорастворимые</a>
+    <a href="#">Цветочная пыльца</a>
+    <a href="#">Кандурин</a>
+    <a href="#">Фломастеры<br>для рисования</a>
+
+  </div>
+        </div>
+
+    </div>
+
+
+    <ul id="slides">
+    <li class="slide showing">1 слайд</li>
+    <li class="slide">2 слайд</li>
+    <li class="slide">3 слайд</li>
+    <li class="slide">4 слайд</li>
+    <li class="slide">5 слайд</li>
+    </ul>
+
+
+          <div id="Pre_view">
+          <div class="container_cake">
+    {% for x in base %}
+    <div class="cake_items">
+        {% if x.image %}
+        <div class="items_images">
+    <img src="{{ x.image.url }}">
+        </div>
+
+        {% endif %}
+        <div class="title">
+            {{ x.title }}
+        </div>
+        <div class="price">
+            {{ x.price }}
+        </div>
+        <div class="body">
+            {{ x.body }}
+        </div>
+        <div class="but">
+        <form action="base/de-scripts/" method="post">
+            {% csrf_token %}
+            <button type="submit" name="id" value="{{ x.id }}">Описание</button>
+        </form>
+        </div>
+         </div>
+        {% endfor %}
+ </div>
+
+
+     </div>
+
+    <div id="wrap_form">
+     <div class="form_wrap">
+         <div class="forma">
+             <h3> Отправить заявку</h3>
+         <form action="">
+             <h5> Номер </h5>
+             <input type="text">
+             <h5> Имя</h5>
+             <input type="text">
+
+         </form>
+             </div>
+     </div>
+    </div>
+
+
+
+
+  <footer>
+      <div id="foot">
+                <ul class="foot-menu">
+
+          <li>
+                <a href="">@mail.ru</a>
+            </li>
+                    <li>
+                <a href="">Контакты</a>
+            </li>
+                              <li>
+                <a href="">Соглашение</a>
+            </li>
+      </ul>
+
+
+
+      </div>
+  </footer>
+
+ <script>
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide,2000);
+
+    function nextSlide(){
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }
+ </script>
+ </body>
+</html>
